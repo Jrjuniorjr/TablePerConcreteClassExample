@@ -7,16 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "HourlyEmployer")
-@AttributeOverrides({
-    @AttributeOverride(name="eName", column=@Column(name="eName")),
-})
 public class HourlyEmployer extends Employer{
 
-	@Column(name="noHoursPerDay")
-	private int noHoursPerDay;
-	
-	@Column(name="hourlyRate")
+	private int noHoursPerDay;	
 	private double hourlyRate;
 	public int getNoHoursPerDay() {
 		return noHoursPerDay;

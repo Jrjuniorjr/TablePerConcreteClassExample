@@ -9,15 +9,9 @@ import javax.persistence.Table;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Entity
-@Table(name = "SalariedEmployer")
-@AttributeOverrides({
-	@AttributeOverride(name="empNo", column=@Column(name="empNo")),
-    @AttributeOverride(name="eName", column=@Column(name="eName"))
-})
 public class SalariedEmployer extends Employer{
 
-	@Column(name="annualSalary")
-	private double annualSalary;
+	protected double annualSalary;
 
 	
 	public SalariedEmployer(int empNo, String eName, double annualSalary) {

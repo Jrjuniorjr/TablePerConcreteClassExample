@@ -13,18 +13,12 @@ import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Employer")
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
-public class Employer {
+public abstract class Employer {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="empNo")
 	private int empNo;
-	@Column(name="eName")
 	private String eName;
-	
-	
 	
 	public Employer(int empNo, String eName) {
 		super();
