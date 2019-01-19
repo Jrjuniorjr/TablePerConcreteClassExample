@@ -55,6 +55,16 @@ public class EmployerService {
 		 */
 		
 		/*
+		 * Suponha que um Employer tem um relacionamento OneToMany com Vehicle, onde um Employer tem varios Vehicles.
+		 *Se for essa strategy(SOMENTE NESSA), ele não consegue(ou não permite) que o id(nesse caso, empNo),
+		 *seja colocado na tabela Vehicle na criação do banco como chave estrangeira(FK). É criado na tabela Vehicles
+		 *um atributo empNo não sendo chave estrangeira, ou seja não tem relacionamento  com a tabela Employer.
+		 *PARA QUE ISSO NÃO OCORRA(SOLUCIONAR ESSE PROBLEMA), É NECESSAARIO CRIAR O BANCO NA MÃO, OU SEJA NÃO PERMITIR
+		 *QUE O JPA CRIE AS TABELAS NO BANCO.
+		 *(ATÉ AGORA NÃO DESCOBRI NENHUMA FORMA PARA SOLUCIONAR ESSE PROBLEMA, SOMENTE A DE CRIAR O BANCO NA MÃO).
+		 */
+		
+		/*
 		 * Resumo dessa strategy: Só usar quando tiver uma super classe abstrata que não vai ser uma tabela no banco.
 		 */
 		Employer employer = new SalariedEmployer();
